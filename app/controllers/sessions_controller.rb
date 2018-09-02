@@ -11,5 +11,11 @@ class SessionsController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    session[:user_id] = nil
+    require 'pry'; binding.pry
+    redirect_to login_path
+  end
 end
 
