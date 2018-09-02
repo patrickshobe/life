@@ -1,0 +1,74 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/pat/Projects/life/spec/models/user_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        2,
+        2,
+        2,
+        null,
+        null,
+        null
+      ],
+      "/Users/pat/Projects/life/app/models/user.rb": [
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/pat/Projects/life/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/pat/Projects/life/app/controllers/welcome_controller.rb": [
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/pat/Projects/life/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/pat/Projects/life/app/controllers/users_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1535922589
+  }
+}
