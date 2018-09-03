@@ -6,14 +6,16 @@ describe 'User Login' do
 
     visit '/'
 
-    click_on "I already have an account"
-
+    within '.navbar' do
+      click_on "Login"
+    end
     expect(current_path).to eq(login_path)
     fill_in "username", with: user.username
     fill_in "password", with: user.password
 
-    click_on "Log In"
-
+    within '.card-body' do
+      click_on "Log In"
+    end
     expect(current_path).to eq(user_path(user))
 
     expect(page).to have_content("Welcome, #{user.username}")
@@ -24,13 +26,17 @@ describe 'User Login' do
 
     visit '/'
 
-    click_on "I already have an account"
+    within '.navbar' do
+      click_on "Login"
+    end
 
     expect(current_path).to eq(login_path)
     fill_in "username", with: user.username
     fill_in "password", with: 'wrong password'
 
-    click_on "Log In"
+    within '.card-body' do
+      click_on "Log In"
+    end
 
     expect(page).to_not have_content("Welcome, #{user.username}")
     expect(page).to have_content("Username")

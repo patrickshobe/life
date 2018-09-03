@@ -5,13 +5,18 @@ describe 'User Features' do
     username = "Bart"
     visit '/'
 
-    click_on "Sign Up to Be a User"
+    within '.navbar' do
+      click_on "Sign Up"
+    end
     expect(current_path).to eq(new_user_path)
 
     fill_in :user_username, with: username
     fill_in :user_password, with: "test"
 
-    click_on "Create User"
+
+    within '.card-body' do
+      click_on "Sign Up"
+    end
 
     expect(page).to have_content("Welcome, #{username}!")
   end
@@ -22,14 +27,19 @@ describe 'User Features' do
 
     visit '/'
 
-    click_on "Sign Up to Be a User"
+
+    within '.navbar' do
+      click_on "Sign Up"
+    end
     expect(current_path).to eq(new_user_path)
 
     fill_in :user_username, with: user.username
     fill_in :user_password, with: "test"
 
-    click_on "Create User"
 
+    within '.card-body' do
+      click_on "Sign Up"
+    end
     expect(page).to_not have_content("Welcome, #{user.username}!")
   end
 end
