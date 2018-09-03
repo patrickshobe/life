@@ -72,6 +72,33 @@
         null,
         null
       ],
+      "/Users/pat/Projects/life/spec/features/user_activities/user_can_create_spec.rb": [
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
       "/Users/pat/Projects/life/spec/features/users/user_admin_can_delete_spec.rb": [
         1,
         null,
@@ -313,11 +340,11 @@
         1,
         null,
         1,
+        12,
+        12,
         11,
         11,
-        10,
-        10,
-        10,
+        11,
         null,
         1,
         1,
@@ -338,7 +365,7 @@
         1,
         null,
         1,
-        35,
+        39,
         null,
         null,
         1,
@@ -353,7 +380,7 @@
         null,
         null,
         1,
-        11,
+        13,
         null,
         null,
         null,
@@ -420,6 +447,24 @@
         null,
         null
       ],
+      "/Users/pat/Projects/life/app/controllers/user_activities_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/pat/Projects/life/app/controllers/admin/users_controller.rb": [
         1,
         1,
@@ -438,6 +483,6 @@
         null
       ]
     },
-    "timestamp": 1535944482
+    "timestamp": 1535946968
   }
 }
