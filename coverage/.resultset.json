@@ -99,6 +99,29 @@
         null,
         null
       ],
+      "/Users/pat/Projects/life/spec/features/user_can_delete_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
       "/Users/pat/Projects/life/spec/features/users/user_admin_can_delete_spec.rb": [
         1,
         null,
@@ -340,11 +363,11 @@
         1,
         null,
         1,
+        13,
+        13,
         12,
         12,
-        11,
-        11,
-        11,
+        12,
         null,
         1,
         1,
@@ -365,7 +388,7 @@
         1,
         null,
         1,
-        39,
+        42,
         null,
         null,
         1,
@@ -380,7 +403,7 @@
         null,
         null,
         1,
-        13,
+        14,
         null,
         null,
         null,
@@ -459,6 +482,10 @@
         null,
         null,
         1,
+        1,
+        null,
+        null,
+        1,
         null,
         1,
         1,
@@ -483,6 +510,6 @@
         null
       ]
     },
-    "timestamp": 1535946968
+    "timestamp": 1535989689
   }
 }

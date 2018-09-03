@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show]
   resources :activities, only: [:index, :show]
-  resources :user_activities, only: [:create, :new, :delete]
+  resources :user_activities, only: [:create, :new, :delete, :index]
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

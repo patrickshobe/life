@@ -4,8 +4,12 @@ class UserActivitiesController < ApplicationController
   end
 
   def create
-    user_activity = UserActivity.create(activity_id: user_activity_params,user_id: current_user.id)
+    UserActivity.create(activity_id: user_activity_params,user_id: current_user.id)
     redirect_to user_path(current_user.id)
+  end
+
+  def index
+    @activities = UserActivity.where(user_id: current_user.id)
   end
 
   private

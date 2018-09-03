@@ -1,0 +1,6 @@
+<h1>Activities for <%= current_user.username %></h1>
+
+<% @activities.each do |user_activity| %>
+  <%= user_activity.activity.title %>
+  <% end %>
+
