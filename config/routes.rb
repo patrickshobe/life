@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, only: [:index]
     resources :activities
+    resources :user_activities, only: [:create, :new, :destroy, :index]
   end
 
 

@@ -1,0 +1,10 @@
+<h1>Record an Activity</h1>
+
+<%= form_for @user_activity do |f| %>
+  <%= f.label :Activity %>
+  <%= f.collection_select :activity_id, Activity.order(:title),:id,:title, include_blank: true %>
+  <br/>
+  <%= f.label :User%>
+  <%= f.collection_select :user_id, User.order(:username),:id,:username, include_blank: true %>
+  <%= f.submit 'Create' %>
+<% end %>
