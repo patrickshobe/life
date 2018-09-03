@@ -18,8 +18,8 @@ describe 'User Login' do
     end
     expect(current_path).to eq(user_path(user))
 
-    expect(page).to have_content("Welcome, #{user.username}")
-    expect(page).to have_content("Log out")
+    expect(page).to have_content(user.username)
+    expect(page).to have_content("Log Out")
   end
   it 'should fail to login' do
     user = User.create(username: "funbucket13", password: "test")
@@ -38,7 +38,7 @@ describe 'User Login' do
       click_on "Log In"
     end
 
-    expect(page).to_not have_content("Welcome, #{user.username}")
+    expect(page).to_not have_content(user.username)
     expect(page).to have_content("Username")
   end
 

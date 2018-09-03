@@ -18,7 +18,7 @@ describe 'User Features' do
       click_on "Sign Up"
     end
 
-    expect(page).to have_content("Welcome, #{username}!")
+    expect(page).to have_content(username)
   end
 
   it 'should not double create a user' do
@@ -40,6 +40,6 @@ describe 'User Features' do
     within '.card-body' do
       click_on "Sign Up"
     end
-    expect(page).to_not have_content("Welcome, #{user.username}!")
+    expect(page).to_not have_content(user.username)
   end
 end

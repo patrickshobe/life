@@ -1,0 +1,46 @@
+
+
+<!-- views/users/show.html.erb -->
+
+<div class="jumbotron jumbotron-fluid align-items-center" style="background-color: #46B6FF; height: 80vh; margin-bottom: 0px;">
+  </br>
+  </br>
+  </br>
+  <div class="container">
+    <div class="row ">
+      <div class="col-sm align-items-center">
+        <%=image_tag("usr.png", style: 'height: 30vh;')%>
+      </div>
+      <div class="col-sm">
+        <h1 class="display-1 text-white"><%= @user.username %></h1>
+        <h3 class="display-4 textiwhite"><%=@user.user_activities.joins(:activity).sum(:points)%> Points</h3>
+        <%= link_to 'Add Activity', new_user_activity_path, class: 'btn btn-success' %>
+      </div>
+      <div class='col-sm'>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="jumbotron jumbotron-fluid align-items-center" style="height: 100%; margin-top: 0px;">
+  </br>
+  </br>
+  </br>
+  <div class="container">
+    <div class="row ">
+      <div class="col-sm align-items-center">
+      </div>
+      <div class="col-sm">
+      </div>
+      <div class='col-sm'>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

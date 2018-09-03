@@ -20,9 +20,9 @@ describe 'User Log Out' do
 
     expect(current_path).to eq(user_path(user))
 
-    expect(page).to have_content("Welcome, #{user.username}")
-    expect(page).to have_content("Log out")
-    click_on 'Log out'
+    expect(page).to have_content(user.username)
+    expect(page).to have_content("Log Out")
+    click_on 'Log Out'
     expect(current_path).to eq(login_path)
   end
 end
