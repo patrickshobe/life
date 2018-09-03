@@ -1,0 +1,7 @@
+<h1><%= @activity.title %></h1>
+
+<h1><%= @activity.points %> Points</h1>
+<h1><%= @activity.category %></h1>
+
+<%= link_to 'Edit', edit_admin_activity_path(@activity) %>
+<%= link_to 'Delete', admin_activity_path(@activity), method: :delete %>

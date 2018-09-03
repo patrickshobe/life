@@ -239,11 +239,11 @@
         1,
         null,
         1,
-        5,
-        5,
-        4,
-        4,
-        4,
+        8,
+        8,
+        7,
+        7,
+        7,
         null,
         1,
         1,
@@ -264,11 +264,11 @@
         1,
         null,
         1,
-        5,
+        20,
         null,
         null,
         1,
-        2,
+        8,
         null,
         null
       ],
@@ -279,7 +279,7 @@
         null,
         null,
         1,
-        5,
+        8,
         null,
         null,
         null,
@@ -310,13 +310,29 @@
         1,
         1,
         null,
+        null,
+        null,
         null
       ],
-      "/Users/pat/Projects/life/app/controllers/admin/users_controller.rb": [
+      "/Users/pat/Projects/life/app/controllers/admin/activities_controller.rb": [
+        1,
+        1,
+        3,
+        null,
+        null,
         1,
         1,
         null,
         null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
         null,
         null
       ],
@@ -325,7 +341,15 @@
         1,
         null,
         1,
-        2,
+        8,
+        null,
+        null,
+        null
+      ],
+      "/Users/pat/Projects/life/app/controllers/admin/users_controller.rb": [
+        1,
+        1,
+        null,
         null,
         null,
         null
@@ -340,6 +364,6 @@
         null
       ]
     },
-    "timestamp": 1535938098
+    "timestamp": 1535939708
   }
 }
