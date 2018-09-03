@@ -1,6 +1,30 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/pat/Projects/life/spec/features/activities/users_can_see_all_activities_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/pat/Projects/life/spec/features/users/user_admin_can_delete_spec.rb": [
         1,
         null,
@@ -215,11 +239,11 @@
         1,
         null,
         1,
+        5,
+        5,
         4,
         4,
-        3,
-        3,
-        3,
+        4,
         null,
         1,
         1,
@@ -240,7 +264,7 @@
         1,
         null,
         1,
-        4,
+        5,
         null,
         null,
         1,
@@ -255,7 +279,7 @@
         null,
         null,
         1,
-        4,
+        5,
         null,
         null,
         null,
@@ -278,6 +302,10 @@
       ],
       "/Users/pat/Projects/life/app/controllers/activities_controller.rb": [
         1,
+        null,
+        1,
+        1,
+        null,
         null,
         1,
         1,
@@ -312,6 +340,6 @@
         null
       ]
     },
-    "timestamp": 1535937630
+    "timestamp": 1535938098
   }
 }
