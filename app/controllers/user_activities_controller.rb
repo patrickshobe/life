@@ -12,6 +12,11 @@ class UserActivitiesController < ApplicationController
     @activities = UserActivity.where(user_id: current_user.id)
   end
 
+  def destroy
+    UserActivity.destroy(params[:id])
+    redirect_to user_activities_path
+  end
+
   private
 
   def user_activity_params

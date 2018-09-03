@@ -1,6 +1,9 @@
 <h1>Activities for <%= current_user.username %></h1>
+<ul>
+
 
 <% @activities.each do |user_activity| %>
-  <%= user_activity.activity.title %>
+  <li><%= user_activity.activity.title %></li>
+  <li><%= link_to 'Delete', user_activity_path(user_activity), method: :delete %></li>
   <% end %>
-
+</ul>
