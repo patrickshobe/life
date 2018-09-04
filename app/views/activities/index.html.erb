@@ -1,7 +1,62 @@
-<h1>All Activities</h1>
 
-<% @activities.each do |activity| %>
-  <ul>
-    <li><%= activity.title %></li>
-  </ul>
-<% end %>
+
+<!-- views/users/show.html.erb -->
+
+<div class="jumbotron jumbotron-fluid align-items-center" style="background-color: #46B6FF; height: 80vh; margin-bottom: 0px;">
+  </br>
+  </br>
+  </br>
+  <div class="container">
+    <div class="row ">
+      <div class="col-2 align-items-center">
+      </div>
+      <div class="col-8">
+        <div class="card text-center" >
+
+          <div class="card-body">
+            <h2>All Activities</h2>
+            <div class='table-responsive'>
+
+
+            <table class="table table-borderless">
+              <tbody>
+                <% @activities.each do |activity| %>
+                <tr>
+                  <td><%= activity.title %></td>
+                  <td><%= activity.category %></td>
+                  <td><%= activity.points %> Points</td>
+                  <% end %>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+          </br>
+        </div>
+      </div>
+      <div class='col-2'>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron jumbotron-fluid align-items-center" style="height: 80vh; margin-top: 0px;">
+  <div class="container">
+    <div class="row ">
+    </div>
+  </div>
+</div>
+
+
+<div class="jumbotron jumbotron-fluid align-items-center" style="height: 80vh; margin-top: 0px; background-color: #46b6ff">
+  <div class="container">
+    <div class="row ">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
