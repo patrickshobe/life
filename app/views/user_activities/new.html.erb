@@ -1,7 +1,54 @@
-<h1>Record an Activity</h1>
+<!-- views/users/show.html.erb -->
 
-<%= form_for @user_activity do |f| %>
-  <%= f.label :Activity %>
-  <%= f.collection_select :activity_id, Activity.order(:title),:id,:title, include_blank: true %>
-  <%= f.submit 'Create' %>
-<% end %>
+<div class="jumbotron jumbotron-fluid align-items-center" style="background-color: #46B6FF; height: 80vh; margin-bottom: 0px;">
+  </br>
+  </br>
+  </br>
+  <div class="container">
+    <div class="row ">
+      <div class="col-sm align-items-center">
+      </div>
+      <div class="col-sm">
+
+        <div class="card text-center" >
+
+          <div class="card-body">
+            <h5 class="card-title h3" style="color: #68767F">Record Activity</h5>
+
+            <%= form_for @user_activity do |f| %>
+            <div class="form-group">
+              <%= f.label :Activity %>
+              <%= f.collection_select :activity_id, Activity.order(:title),:id,:title, include_blank: true, class: 'custom-select' %>
+            </div>
+            <%= f.submit "Create", class: "btn btn-primary" %>
+            <% end %>
+            </br>
+          </div>
+          </br>
+        </div>
+      </div>
+      <div class='col-sm'>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="jumbotron jumbotron-fluid align-items-center" style="height: 100%; margin-top: 0px;">
+  </br>
+  </br>
+  </br>
+  <div class="container">
+    <div class="row ">
+      <div class="col-sm align-items-center">
+      </div>
+      <div class="col-sm">
+
+      </div>
+      <div class='col-sm'>
+      </div>
+    </div>
+  </div>
+</div>
+
+

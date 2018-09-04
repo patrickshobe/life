@@ -4,7 +4,7 @@ class UserActivitiesController < ApplicationController
   end
 
   def create
-    UserActivity.create(activity_id: user_activity_params,user_id: current_user.id)
+    UserActivity.create(activity_id: user_activity_params[:activity_id],user_id: current_user.id)
     redirect_to user_path(current_user.id)
   end
 
