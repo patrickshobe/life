@@ -10,7 +10,7 @@ describe "User visits users index page" do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
       visit admin_users_path
-      expect(page).to have_content("Admin Users")
+      expect(page).to have_content("penelope")
     end
 
   end
@@ -24,7 +24,6 @@ describe "User visits users index page" do
 
     visit admin_users_path
 
-    expect(page).to_not have_content("Admin Users")
     expect(page).to have_content("The page you were looking for doesn't exist.")
   end
 end

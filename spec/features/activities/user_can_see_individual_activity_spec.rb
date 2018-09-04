@@ -63,7 +63,7 @@ describe 'Admin Interactions' do
     click_on 'Delete'
 
     expect(current_path).to eq(admin_activities_path)
-    expect(page).to have_content("Activity #{activity.title} Deleted")
+    expect(page).to_not have_content(activity.title)
   end
 
 end
