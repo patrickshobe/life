@@ -22,7 +22,6 @@
                   <td><%= activity.category %></td>
                   <td><%= activity.points %> Points</td>
                   <td><%= link_to 'Edit', edit_admin_activity_path(activity), class: 'btn btn-sm btn-outline-warning' %></td>
-                  <td><%= link_to 'Delete', admin_activity_path(activity), method: :delete, class: 'btn btn-sm btn-outline-danger' %></td>
                   <% end %>
                 </tr>
               </tbody>

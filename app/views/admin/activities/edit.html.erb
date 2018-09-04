@@ -1,0 +1,42 @@
+<div class="jumbotron jumbotron-fluid align-items-center" style="background-color: #46B6FF; height: 80vh; margin-bottom: 0px;">
+  </br>
+  </br>
+  </br>
+  <div class="container">
+    <div class="row ">
+      <div class="col-sm align-items-center">
+      </div>
+      <div class="col-sm">
+
+        <div class="card text-center" >
+
+          <div class="card-body">
+            <h5 class="card-title h3" style="color: #68767F">Edit Activity</h5>
+
+            <%= form_for @activity do |f| %>
+            <div class="form-group">
+              <%= f.label :Title %>
+              <%= f.text_field :title %>
+            </div>
+            <div class="form-group">
+              <%= f.label :category %>
+              <%= f.text_field :category %>
+            </div>
+            <div class="form-group">
+              <%= f.label :points %>
+              <%= f.text_field :points %>
+            </div>
+            <%= f.submit "Create", class: "btn btn-primary" %>
+            <% end %>
+            </br>
+          </div>
+          </br>
+        </div>
+      </div>
+      <div class='col-sm'>
+      </div>
+    </div>
+  </div>
+
+</div>
+

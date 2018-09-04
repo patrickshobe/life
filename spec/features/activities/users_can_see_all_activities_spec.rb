@@ -51,19 +51,5 @@ describe 'Admin Interactions' do
 
     expect(current_path).to eq(edit_admin_activity_path(activity))
   end
-  it 'should have a delete button' do
-    activity = create(:activity)
-
-    visit admin_activities_path
-
-    expect(page).to have_content(activity.title)
-
-    expect(page).to have_link('Delete')
-
-    click_on 'Delete'
-
-    expect(current_path).to eq(admin_activities_path)
-    expect(page).to have_content("Activity #{activity.title} Deleted")
-  end
 
 end

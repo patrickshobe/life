@@ -1,2 +1,57 @@
 
-<h1>Admin Users</h1>
+<div class="jumbotron jumbotron-fluid align-items-center" style="background-color: #46B6FF; height: 80vh; margin-bottom: 0px;">
+  </br>
+  </br>
+  </br>
+  <div class="container">
+    <div class="row ">
+      <div class="col-2">
+      </div>
+      <div class="col-12">
+        <div class="card text-center" >
+
+          <div class="card-body">
+            <h2>All Activities</h2>
+            <div class='table-responsive'>
+
+
+            <table class="table table-borderless">
+              <tbody>
+                <% @users.each do |user| %>
+                <tr>
+                  <td><%= user.username %></td>
+                  <% end %>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+          </br>
+        </div>
+      </div>
+      <div class='col-2'>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron jumbotron-fluid align-items-center" style="height: 80vh; margin-top: 0px;">
+  <div class="container">
+    <div class="row ">
+    </div>
+  </div>
+</div>
+
+
+<div class="jumbotron jumbotron-fluid align-items-center" style="height: 80vh; margin-top: 0px; background-color: #46b6ff">
+  <div class="container">
+    <div class="row ">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

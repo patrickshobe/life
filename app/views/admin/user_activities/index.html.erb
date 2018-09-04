@@ -1,9 +1,58 @@
-<h1>All User Activities</h1>
-<ul>
+
+<div class="jumbotron jumbotron-fluid align-items-center" style="background-color: #46B6FF; height: 80vh; margin-bottom: 0px;">
+  </br>
+  </br>
+  </br>
+  <div class="container">
+    <div class="row ">
+      <div class="col-2">
+      </div>
+      <div class="col-12">
+        <div class="card text-center" >
+
+          <div class="card-body">
+            <div class='table-responsive'>
 
 
-<% @activities.each do |user_activity| %>
-  <li><%= user_activity.activity.title %></li>
-  <li><%= link_to 'Delete', user_activity_path(user_activity), method: :delete %></li>
-  <% end %>
-</ul>
+            <table class="table table-borderless">
+              <tbody>
+                <% @activities.each do |user_activity| %>
+                <tr>
+                  <td><%= user_activity.activity.title %></td>
+                  <td><%= user_activity.user.username%></td>
+                  <td><%= user_activity.created_at%></td>
+                  <td><%= link_to 'Delete', user_activity_path(user_activity), method: :delete %></td>
+                  <% end %>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+          </br>
+        </div>
+      </div>
+      <div class='col-2'>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron jumbotron-fluid align-items-center" style="height: 80vh; margin-top: 0px;">
+  <div class="container">
+    <div class="row ">
+    </div>
+  </div>
+</div>
+
+
+<div class="jumbotron jumbotron-fluid align-items-center" style="height: 80vh; margin-top: 0px; background-color: #46b6ff">
+  <div class="container">
+    <div class="row ">
+    </div>
+  </div>
+</div>
+
+
+
+
+
