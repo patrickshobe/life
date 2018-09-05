@@ -5,13 +5,13 @@
   </br>
   <div class="container">
     <div class="row ">
-      <div class="col-2">
+      <div class="col-2 align-items-center">
       </div>
-      <div class="col-12">
+      <div class="col-8">
         <div class="card text-center" >
 
           <div class="card-body">
-            <h2>All Activities</h2>
+            <h2>All Users</h2>
             <div class='table-responsive'>
 
 
@@ -19,7 +19,7 @@
               <tbody>
                 <% @users.each do |user| %>
                 <tr>
-                  <td><%=link_to user.username, user_path(user) %></td>
+                  <td><%= link_to user.username, user_path(user) %></td>
                   <% end %>
                 </tr>
               </tbody>

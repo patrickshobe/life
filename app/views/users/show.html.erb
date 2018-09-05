@@ -12,7 +12,7 @@
       </div>
       <div class="col-sm">
         <h1 class="display-1 text-white"><%= @user.username %></h1>
-        <h3 class="display-4 textiwhite"><%=@user.activities.sum(:points)%> Points</h3>
+        <h3 class="display-4 textiwhite"><%=@user.points %> Points</h3>
 
         <% if @user == current_user %>
           <%= link_to 'Add Activity', new_user_activity_path, class: 'btn btn-success' %>
@@ -20,13 +20,13 @@
       </div>
       <div class='col-sm'>
         <br/>
-        <h3 class="display-4 text-center text-white">Level <%= @level.level%> </h3>
+        <h3 class="display-4 text-center text-white">Level <%= @user.level.level %> </h3>
         <hr>
         <div class="progress">
-          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: <%= @progress %>" aria-valuenow=<%= @points %> aria-valuemin=<%= @level.min_score %> aria-valuemax=<%= @level.max_score %>></div>
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: <%= @user.progress %>" aria-valuenow=<%= @user.points %> aria-valuemin=<%= @user.level.min_score %> aria-valuemax=<%= @user.level.max_score %>></div>
         </div>
         <hr>
-        <em><p class='text-white text-center'><%= @points %>/ <%= @level.max_score %></p></em>
+        <em><p class='text-white text-center'><%= @user.points %>/ <%= @user.level.max_score %></p></em>
       </div>
     </div>
   </div>

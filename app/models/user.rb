@@ -9,5 +9,18 @@ class User < ApplicationRecord
   has_many :user_activities
   has_many :activities, through: :user_activities
 
+  def points
+    self.activities.sum(:points)
+  end
+
+  def level
+    @level = Level.find_by("#{points} between min_score and max_score")
+    @level ||= Level.first
+  end
+
+  def progress
+    progress = ((points.to_f / level.max_score) * 100).round(2).to_s + '%'
+    progress ||= 0
+  end
 end
 

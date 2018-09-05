@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show, :index]
   resources :activities, only: [:index, :show]
   resources :user_activities, only: [:create, :new, :destroy, :index]
 
