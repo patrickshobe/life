@@ -66,6 +66,6 @@ describe 'Admin Users Index' do
 
     click_on user_0.username
     expect(page).to have_content(user_0.username)
-    expect(current_path).to eq(user_path(user_0))
+    expect(current_path).to eq(admin_user_path(user_0))
   end
 end
