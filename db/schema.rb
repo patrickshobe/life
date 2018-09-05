@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 20180904202357) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
-    t.integer "level", default: 0
     t.integer "role", default: 0
   end
 

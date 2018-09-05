@@ -5,7 +5,9 @@ class UsersController < ApplicationController
 
    def show
     @user = User.find(params[:id])
-    @user.update_level
+    @points = @user.activities.sum(:points)
+    @level = Level.find_by("#{@points} between min_score and max_score")
+    @progress = ((@points.to_f / @level.max_score) * 100).round(2).to_s + '%'
    end
 
 
