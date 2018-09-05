@@ -8,5 +8,10 @@ class User < ApplicationRecord
 
   has_many :user_activities
   has_many :activities, through: :user_activities
+
+  def update_level
+    level = Level.find_by("#{self.activities.sum(:points)} between min_score AND max_score")
+    self.level = level.id if level
+  end
 end
 

@@ -5,6 +5,7 @@ class UserActivitiesController < ApplicationController
 
   def create
     UserActivity.create(activity_id: user_activity_params[:activity_id],user_id: current_user.id)
+    current_user.update_level
     redirect_to user_path(current_user.id)
   end
 

@@ -14,3 +14,8 @@ CSV.foreach('./db/activities.csv', headers: true, header_converters: :symbol) do
                   points: activity[:points],
                  category: activity[:category])
 end
+CSV.foreach('./db/levels.csv', headers: true, header_converters: :symbol) do |level|
+  Level.create(level: level[:level],
+                  min_score: level[:min],
+                  max_score: level[:max])
+end

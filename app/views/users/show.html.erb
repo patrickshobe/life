@@ -13,6 +13,8 @@
       <div class="col-sm">
         <h1 class="display-1 text-white"><%= @user.username %></h1>
         <h3 class="display-4 textiwhite"><%=@user.user_activities.joins(:activity).sum(:points)%> Points</h3>
+        <h3 class="display-4 textiwhite">Level <%= @user.level %></h3>
+
         <% if @user == current_user %>
           <%= link_to 'Add Activity', new_user_activity_path, class: 'btn btn-success' %>
 
