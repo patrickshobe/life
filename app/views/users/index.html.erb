@@ -20,6 +20,8 @@
                 <% @users.each do |user| %>
                 <tr>
                   <td><%= link_to user.username, user_path(user) %></td>
+                  <td>Level <%= user.level.level %></td>
+                  <td><%= user.points %> Points</td>
                   <% end %>
                 </tr>
               </tbody>

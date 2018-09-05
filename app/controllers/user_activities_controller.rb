@@ -4,8 +4,12 @@ class UserActivitiesController < ApplicationController
   end
 
   def create
-    UserActivity.create(activity_id: user_activity_params[:activity_id],user_id: current_user.id)
-    redirect_to user_path(current_user.id)
+    if UserActivity.valid(user_activity_params)
+      UserActivity.create(activity_id: user_activity_params[:activity_id],user_id: current_user.id)
+      redirect_to user_path(current_user.id)
+    else
+      render :new
+    end
   end
 
   def index

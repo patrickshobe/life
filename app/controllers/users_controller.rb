@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_user, only: [:show, :index]
+
   def new
     @user = User.new
   end
@@ -27,4 +29,8 @@ private
   def user_params
     params.require(:user).permit(:username, :password)
   end
+
+    def require_user
+      render file: "/public/404" unless current_user
+    end
 end

@@ -18,8 +18,9 @@
             <table class="table table-borderless">
               <tbody>
                 <% @users.each do |user| %>
-                <tr>
+                  <tr id="user-<%= user.id %>">
                   <td><%=link_to user.username, admin_user_path(user) %></td>
+                  <td><%=link_to 'Delete', admin_user_path(user), method: :delete %></td>
                   <% end %>
                 </tr>
               </tbody>
