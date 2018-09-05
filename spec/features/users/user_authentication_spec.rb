@@ -2,6 +2,9 @@ require 'rails_helper'
 
 describe 'User Features' do
   it 'should create a user' do
+
+    Activity.create(id: 0, title: 'Sign Up!', points: 10, category: 'Other')
+    Level.create!(level: 1, min_score: 0, max_score: 1000)
     username = "Bart"
     visit '/'
 

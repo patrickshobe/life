@@ -2,6 +2,9 @@ require 'rails_helper'
 
 describe 'User Log Out' do
   it 'should allow a user to log Out' do
+
+    Activity.create(id: 0, title: 'Sign Up!', points: 10, category: 'Other')
+    Level.create!(level: 1, min_score: 0, max_score: 1000)
     user = User.create(username: "funbucket13", password: "test")
 
     visit '/'
