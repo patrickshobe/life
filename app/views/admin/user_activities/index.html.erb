@@ -17,7 +17,7 @@
             <table class="table table-borderless">
               <tbody>
                 <% @activities.each do |user_activity| %>
-                <tr>
+                <tr id="user-activity-<%= user_activity.id %>">
                   <td><%= user_activity.activity.title %></td>
                   <td><%= user_activity.user.username%></td>
                   <td><%= user_activity.created_at%></td>
