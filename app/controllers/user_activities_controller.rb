@@ -1,4 +1,6 @@
 class UserActivitiesController < ApplicationController
+  before_action :require_user, only: [:show, :index, :new, :destroy]
+
   def new
     @user_activity = UserActivity.new
   end
@@ -26,5 +28,9 @@ class UserActivitiesController < ApplicationController
 
   def user_activity_params
     params.require(:user_activity).permit(:activity_id)
+  end
+
+  def require_user
+    render file: "/public/404" unless current_user
   end
 end
