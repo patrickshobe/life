@@ -4,11 +4,12 @@ class UserActivitiesController < ApplicationController
   end
 
   def create
-    if UserActivity.valid(user_activity_params)
+    if UserActivity.valid(user_activity_params, current_user)
       UserActivity.create(activity_id: user_activity_params[:activity_id],user_id: current_user.id)
       redirect_to user_path(current_user.id)
     else
-      render :new
+      redirect_to new_user_activity_path
+      flash.notice = "You can only do that once a day"
     end
   end
 

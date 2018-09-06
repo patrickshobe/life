@@ -11,7 +11,7 @@
   gtag('config', 'UA-115621963-2');
 </script>
 
-    <title>Life</title>
+    <title>Adultish</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -31,7 +31,7 @@
     <% if current_user.nil? %>
      <!--Anon Navbar Area -->
       <nav class="navbar sticky-top navbar-expand-sm navbar-light ">
-    <a class="nav-link h3" href="<%= root_path %>">  Life  </a>
+    <a class="nav-link h3" href="<%= root_path %>">  Adultish  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -64,7 +64,7 @@
         <%= link_to 'Activities', admin_activities_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <%= link_to 'Users', admin_users_path, class: 'nav-link' %>
+        <%= link_to 'Leaderboard', admin_users_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
         <%= link_to 'User Activities', admin_user_activities_path, class: 'nav-link' %>
@@ -92,7 +92,7 @@
         <%= link_to 'Home', user_path(current_user), class: 'nav-link'%>
       </li>
       <li class="nav-item">
-        <%= link_to 'Users', users_path, class: 'nav-link' %>
+        <%= link_to 'Leaderboard', users_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
         <%= link_to 'Activities', activities_path, class: 'nav-link' %>

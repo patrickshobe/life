@@ -7,6 +7,8 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @users = @users.sort_by {|user| - user.points }
+
   end
 
    def show

@@ -19,6 +19,22 @@ describe 'User Interactions' do
     expect(current_path).to eq(user_path(user))
 
   end
+  it 'should not create more than once per 24 hours' do
+
+    Activity.create(id: 0, title: 'Sign Up!', points: 10, category: 'Other')
+    user = create(:user, username: 'Paul')
+    user.user_activities.create(activity_id: 1)
+    Level.create!(level: 1, min_score: 0, max_score: 1000)
+    activity = create(:activity)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    visit new_user_activity_path
+
+    select activity.title, :from => "user_activity[activity_id]"
+    click_on 'Create'
+
+    expect(current_path).to eq(user_path(user))
+  end
 end
 
 describe 'Admin Interactions' do

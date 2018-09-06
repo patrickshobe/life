@@ -1,73 +1,98 @@
 <!-- views/users/show.html.erb -->
-<div class="jumbotron jumbotron-fluid align-items-center" style="background-color: #46B6FF; height: 80vh; margin-bottom: 0px;"></br>
+<div class="jumbotron jumbotron-fluid align-items-center" style="background-color: #46B6FF; margin-bottom: 0px;"></br>
 </br>
 </br>
-<div class="container">
-<div class="row ">
-<div class="col-sm align-items-center">
-  <%=image_tag("usr.png", style: 'height: 30vh;')%>
-</div>
-<div class="col-sm">
-  <h1 class="display-1 text-white"><%= @user.username %></h1>
-  <h3 class="display-4 textiwhite"><%=@user.points %>
-    Points</h3>
-
-  <% if @user == current_user %>
-    <%= link_to 'Add Activity', new_user_activity_path, class: 'btn btn-success' %>
-  <% end %>
-</div>
-<div class='col-sm'>
-  <br/>
-  <h3 class="display-4 text-center text-white">Level
-    <%= @user.level.level %>
-  </h3>
-  <hr>
-  <div class="progress">
-    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: <%= @user.progress %>" aria-valuenow=<%= @user.points %> aria-valuemin=<%= @user.level.min_score %> aria-valuemax=<%= @user.level.max_score %>></div>
+  <div class="container">
+    <div class="row ">
+      <div class="col-sm align-items-center">
+        <%=image_tag("usr.png", style: 'height: 30vh;')%>
+      </div>
+      <div class="col-sm">
+        <h1 class="display-1 text-white"><%= @user.username %></h1>
+        <h3 class="display-4 textiwhite"><%=@user.points %> Points</h3>
+        <% if @user == current_user %>
+          <%= link_to 'Add Activity', new_user_activity_path, class: 'btn btn-success' %>
+        <% end %>
+      </div>
+      <div class='col-sm'>
+        <br/>
+        <h3 class="display-4 text-center text-white">Level <%= @user.level.level %> </h3>
+        <hr>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: <%= @user.progress %>" aria-valuenow=<%= @user.points %> aria-valuemin=<%= @user.level.min_score %> aria-valuemax=<%= @user.level.max_score %>></div>
+        </div>
+        <hr>
+        <em>
+        <p class='text-white text-center'><%= @user.points %>/
+          <%= @user.level.max_score %></p>
+        </em>
+      </div>
+    </div>
+    </br>
   </div>
-  <hr>
-  <em>
-    <p class='text-white text-center'><%= @user.points %>/
-      <%= @user.level.max_score %></p>
-  </em>
 </div>
+
+<div class="jumbotron jumbotron-fluid align-items-center" style="height: 100%; margin-top: 0px; margin-bottom: 0px;">
+  <div class="container">
+    <div class="row ">
+      <div class="col-6">
+        <div class="card text-center" style="min-height: 40vh;">
+          <div class="card-body">
+            <h3>Activities by Category</h3>
+              <%= pie_chart @user.activities.group(:category).count, donut: true, height: '100%'  %>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="card text-center" style="min-height: 40vh;">
+            <div class="card-body">
+              <h3>Activities by Day</h3>
+                <%= bar_chart @user.user_activities.group_by_day_of_week(:created_at, format: "%a").count, height: '100%'  %>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+<div class="jumbotron jumbotron-fluid align-items-center" style="height: 100%; margin-top: 0px; margin-bottom: 0px;"></br>
+  <div class="container">
+    <div class="row ">
+      <div class="col-12">
+        <div class="card text-center" style="min-height: 40vh;">
+          <div class="card-body">
+          <h3>Activities by Day</h3>
+            <%= line_chart @user.user_activities.group_by_day(:created_at).count, height: '100%' %>
+        </div>
+      </div>
+        </div>
+      </div>
+  </div>
 </div>
-</br>
-<div class="row">
-<div class="col-12">
-  <div class="card text-center">
-    <div class="card-body">
-      <h2>Activities</h2>
-      <div class='table-responsive'>
-        <table class="table table-borderless">
-          <tbody>
-            <% @user.activities.each do |activity| %>
-              <tr>
-                <td><%= activity.title %></td>
-                <td><%= activity.category %></td>
-                <td><%= activity.points %>
-                  Points</td>
-              <% end %>
-            </tr>
-          </tbody>
-        </table>
+
+<div class="jumbotron jumbotron-fluid align-items-center" style="height: 100%; margin-top: 0px; margin-bottom: 0px; background-color: #004D7F"></br>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="card text-center">
+          <div class="card-body">
+            <h2>Activities</h2>
+            <div class='table-responsive'>
+              <table class="table table-borderless">
+                <tbody>
+                  <% @user.activities.each do |activity| %>
+                  <tr>
+                    <td><%= activity.title %></td>
+                    <td><%= activity.category %></td>
+                    <td><%= activity.points %> Points</td>
+                    <% end %>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-</div>
-</div>
-
-</div>
-
-<div class="jumbotron jumbotron-fluid align-items-center" style="height: 100%; margin-top: 0px;"></br>
-</br>
-</br>
-<div class="container">
-<div class="row ">
-<div class="col-sm align-items-center"></div>
-<div class="col-sm"></div>
-<div class='col-sm'></div>
-</div>
-</div>
 </div>

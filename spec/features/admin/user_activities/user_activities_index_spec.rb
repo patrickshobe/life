@@ -36,4 +36,21 @@ describe 'Visits User-Acitivities-Index' do
       expect(page).to_not have_content(user_act_1.created_at)
     end
   end
+  context 'as Anon' do
+    it 'should show the 404 page' do
+      visit admin_user_activities_path
+
+      expect(page).to have_content("The page you were looking for doesn't exist.")
+    end
+  end
+  context 'as a user' do
+    it 'should show the 404 page' do
+      user = create(:user)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+      visit admin_user_activities_path
+
+      expect(page).to have_content("The page you were looking for doesn't exist.")
+    end
+  end
 end
