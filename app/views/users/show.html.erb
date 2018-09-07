@@ -62,7 +62,7 @@
         <div class="card text-center" style="min-height: 40vh;">
           <div class="card-body">
           <h3>Activities by Day</h3>
-            <%= line_chart @user.user_activities.group_by_day(:created_at).count, height: '100%' %>
+            <%= area_chart @user.user_activities.group_by_day(:created_at).count, height: '100%' %>
         </div>
       </div>
         </div>

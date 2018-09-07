@@ -1,0 +1,21 @@
+<div class="jumbotron jumbotron-fluid align-items-center" style="background-color: #46B6FF; margin-bottom: 0px;"></br>
+</br>
+</br>
+  <div class="container">
+    <div class="row ">
+      <div class="col-sm align-items-center">
+      </div>
+      <div class="col-sm">
+        <h1 class="display-1 text-white"><%= @user_activity.activity.title %></h1>
+        <h3 class="display-4 textiwhite"><%=@user_activity.activity.points %> Points</h3>
+        <h3 class="display-4 textiwhite">Completed By<%= @user_activity.user.username%></h3>
+        <% if @user_activity.user == current_user %>
+          <%= link_to 'Delete', user_activity_path(@user_activity), method: :delete, class: 'btn btn-success' %>
+        <% end %>
+      </div>
+      <div class='col-sm'>
+      </div>
+    </div>
+    </br>
+  </div>
+</div>
