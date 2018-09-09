@@ -28,6 +28,12 @@ class UserActivitiesController < ApplicationController
     @user_activity = UserActivity.find(params[:id])
   end
 
+  def update
+    user_activity = UserActivity.find(params[:id])
+    user_activity.update(user_activity_params)
+    redirect_to admin_user_activity_path(user_activity)
+  end
+
   private
 
   def user_activity_params
