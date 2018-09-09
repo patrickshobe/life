@@ -21,7 +21,33 @@ describe 'Visit Admin-User-Acitivities-Edit' do
 
       expect(page).to have_content("Activity ID: #{activity_1.id}")
       expect(current_path).to eq(admin_user_activity_path(user_act_1))
+    end
+  end
+  context 'as a user' do
+    it 'should show the 404 page' do
+      user = create(:user)
+      activity = create(:activity)
+      activity_1 = create(:activity, title: 'Yell at the Sky')
+      user_act_1 = user.user_activities.create(activity_id: activity.id)
+      user.user_activities.create(activity_id: activity_1.id)
 
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      visit edit_admin_user_activity_path(user_act_1)
+
+      expect(page).to have_content("The page you were looking for doesn't exist.")
+    end
+  end
+  context 'as an anon ' do
+    it 'should show the 404 page' do
+      user = create(:user)
+      activity = create(:activity)
+      activity_1 = create(:activity, title: 'Yell at the Sky')
+      user_act_1 = user.user_activities.create(activity_id: activity.id)
+      user.user_activities.create(activity_id: activity_1.id)
+
+      visit edit_admin_user_activity_path(user_act_1)
+
+      expect(page).to have_content("The page you were looking for doesn't exist.")
     end
   end
 end
