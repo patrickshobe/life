@@ -24,6 +24,10 @@ class UserActivitiesController < ApplicationController
     redirect_to user_activities_path
   end
 
+  def show
+    @user_activity = UserActivity.find(params[:id])
+  end
+
   private
 
   def user_activity_params

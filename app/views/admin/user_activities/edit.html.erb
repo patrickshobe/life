@@ -1,0 +1,7 @@
+<h1>Edit <%= @activity.id %></h1>
+<% form_for @activity do |f| %>
+  <%= f.label :activity  %>
+  <%= f.collection_select :activity_id, Activity.order(:title),:id,:title, include_blank: true %>
+  <%= f.label :user %>
+  <%= f.collection_select :user_id, User.order(:username),:id,:username, include_blank: true %>
+  <% end %>

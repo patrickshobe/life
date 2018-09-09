@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show, :index]
   resources :activities, only: [:index, :show]
-  resources :user_activities, only: [:create, :new, :destroy, :index]
+  resources :user_activities, only: [:create, :new, :destroy, :index, :show]
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, only: [:index, :show, :destroy]
     resources :activities
-    resources :user_activities, only: [:create, :new, :destroy, :index, :show]
+    resources :user_activities, only: [:create, :new, :destroy, :index, :show, :edit]
   end
 
 
