@@ -1,24 +1,15 @@
-# README
+# life
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Life is gamifies being an adult by rewarding users points for completing adult activities. Users can level up, see other users levels, and see analytics about their activities. 
 
-Things you may want to cover:
+Winner of the 2018-09 Turing School of Software and Design Codefair
 
-* Ruby version
 
-* System dependencies
+![life](https://i.imgur.com/7hTsLIE.png)
 
-* Configuration
+## To Run Locally
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Clone the repo
+2. bundle `bundle && bundle update`
+3. set up the database `rake db:{drop,create,migrate,seed}`
+4. start rails `rails s`
